@@ -1,0 +1,27 @@
+﻿Docker Commands
+
+- `docker build -t my_app .` — ააწყობს Docker იმიჯს მიმდინარე დირექტორიაში არსებული `Dockerfile`-დან და დაარქმევს მას `my_app`.
+- `docker run -p 8000:8000 my_app` — გაუშვებს კონტეინერს `my_app` იმიჯიდან და ჰოსტის 8000-ე პორტს დაუკავშირებს კონტეინერის 8000-ე პორტს.
+- `docker ps` — აჩვენებს ამჟამად გაშვებულ (running) Docker კონტეინერებს.
+- `docker ps -a` — აჩვენებს ყველა კონტეინერს, მათ შორის გაჩერებულებსაც.
+- `docker images` — აჩვენებს ყველა ადგილობრივ Docker იმიჯს, რომლებიც ჩამოტვირთული ან აწყობილია.
+- `docker run -it my_app bash` — გაუშვებს `my_app` კონტეინერს ინტერაქტიულ რეჟიმში (`-it`) და გახსნის `bash` შელს კონტეინერის შიგნით.
+- `docker stop my_app` — შეაჩერებს `my_app` კონტეინერს.
+- `docker rm my_app` — წაშლის `my_app` კონტეინერს (კონტეინერი უნდა იყოს შეჩერებული, თუ არ გამოიყენებთ `-f` პარამეტრს).
+- `docker rmi my_app` — წაშლის `my_app` Docker იმიჯს.
+- `docker exec -it my_app bash` — გახსნის ინტერაქტიულ `bash` შელს უკვე გაშვებულ `my_app` კონტეინერში.
+- `docker logs my_app` — აჩვენებს `my_app` კონტეინერის ლოგებს (სტანდარტულ output-სა და error-ს).
+
+
+
+Docker Compose Commands
+
+- `docker compose up` (ან `docker-compose up`) — საჭიროების შემთხვევაში ააწყობს იმიჯებს, შექმნის და გაუშვებს ყველა სერვისს, რომლებიც განსაზღვრულია `docker-compose.yml` ფაილში.
+- `docker compose up -d` — გაუშვებს სერვისებს ფონურ რეჟიმში (detached).
+- `docker compose down` — შეაჩერებს და წაშლის გაშვებულ კონტეინერებსა და ქსელებს.
+- `docker compose build` — ააწყობს ან ხელახლა ააწყობს იმიჯებს `docker-compose.yml` ფაილიდან.
+- `docker compose ps` — აჩვენებს პროექტის კონტეინერების სტატუსს.
+- `docker compose logs` — აჩვენებს ყველა სერვისის ლოგებს.
+- `docker compose logs -f` — აჩვენებს ლოგებს რეალურ დროში (live).
+- `docker compose exec web bash` — გახსნის ინტერაქტიულ `bash` შელს `web` სერვისის კონტეინერში.
+- `docker compose restart` — გადაატვირთავს ყველა გაშვებულ სერვისს.
